@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns9="http://www.tibco.com/schemas/SellingTitle/SchemaUSGDefinitions/ArchitecturalSchema/SchemaP.xsd" xmlns:ns5="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd4" xmlns:ns6="http://www.tibco.com/schemas/dev_I-2XXX_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd" xmlns:ns10="http://www.tibco.com/schemas/Gripit/SharedResources/XSD/Schema.xsd" xmlns:ns7="http://www.tibco.com/schemas/dev_I-2XXX_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd2" xmlns:ns11="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema1.xsd" xmlns:ns8="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd5" xmlns:ns2="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema2.xsd" xmlns:ns1="http://www.tibco.com/schemas/SecureSellingTitle/SchemaUSGDefinitions/ArchitecturalSchema/SchemaRR.xsd3" xmlns:ns4="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd3" xmlns:ns3="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd2" xmlns:tns="http://xmlns.example.com/1348064767783" xmlns:ns0="http://www.tibco.com/schemas/SecureSellingTitle/SchemaUSGDefinitions/ArchitecturalSchema/SchemaR.xsd2" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="Untitled" targetNamespace="http://xmlns.example.com/1348064767783">
+    <wsdl:types>
+        <xs:schema xmlns="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd3" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd3" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="OverlapSU_Response">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns4:SalesUnit_Id"/>
+                        <xs:element ref="ns4:Week" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="SUnit_Id" type="xs:string"/>
+            <xs:element name="SalesUnit_Id" type="xs:string"/>
+            <xs:element name="Week">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns4:Week_Date"/>
+                        <xs:element ref="ns4:SUnit_Id" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Week_Date" type="xs:string"/>
+        </xs:schema>
+        <xs:schema xmlns="http://www.tibco.com/schemas/Gripit/SharedResources/XSD/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/Gripit/SharedResources/XSD/Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="AIRING_TYPE" type="xs:string"/>
+            <xs:element name="APPROVAL_STATUS" type="xs:string"/>
+            <xs:element name="BRAND">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns10:BRAND_ID"/>
+                        <xs:element ref="ns10:BRAND_NAME"/>
+                        <xs:element ref="ns10:PRIMARY_CAT"/>
+                        <xs:element ref="ns10:SECONDARY_CAT"/>
+                        <xs:element ref="ns10:TERTIARY_CAT"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="BRAND_ID" type="xs:string"/>
+            <xs:element name="BRAND_NAME" type="xs:string"/>
+            <xs:element name="CATEGORY">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns10:PRIMARY_CATEGORY"/>
+                        <xs:element ref="ns10:PRODUCT_CATEGORY"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="COMM_ST_CODE" type="xs:string"/>
+            <xs:element name="COMM_T_CODE" type="xs:string"/>
+            <xs:element name="COMPLIANT_CODE" type="xs:string"/>
+            <xs:element name="CUSTOM_DAYPART" type="xs:string"/>
+            <xs:element name="DATE" type="xs:string"/>
+            <xs:element name="DAYPART" type="xs:string"/>
+            <xs:element name="DEMO_POST_BUY" type="xs:string"/>
+            <xs:element name="END_DATE" type="xs:string"/>
+            <xs:element name="END_TIME" type="xs:string"/>
+            <xs:element name="EXCLUDED_DATES">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns10:DATE" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="FROM_DATE" type="xs:string"/>
+            <xs:element name="GENRE" type="xs:string"/>
+            <xs:element name="GROUP" type="xs:string"/>
+            <xs:element name="GUARENTEED_CODE" type="xs:string"/>
+            <xs:element name="HH_POST_BUY" type="xs:string"/>
+            <xs:element name="HIATUS_DATES">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns10:FROM_DATE"/>
+                        <xs:element ref="ns10:TO_DATE"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="HIATUS_INFO">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns10:EXCLUDED_DATES" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="HOLD_ARCHIVED_REVISION_NO" type="xs:string"/>
+            <xs:element name="LINE_CLASS_CODE" type="xs:string"/>
+            <xs:element name="ORDER_ARCHIVED_REV_NO" type="xs:string"/>
+            <xs:element name="PLAN_AUDIENCE" type="xs:string"/>
+            <xs:element name="PLAN_BRAND">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns10:BRAND" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="PLAN_CATEGORY">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns10:CATEGORY" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="PLAN_LINE">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns10:SALES_UNIT" minOccurs="0"/>
+                        <xs:element name="LINE_NO" type="xs:string" minOccurs="0"/>
+                        <xs:element ref="ns10:PLINE_ID"/>
+                        <xs:element name="DAYS_OF_WEEK" type="xs:string" minOccurs="0"/>
+                        <xs:element name="COMMERCIAL_TYPE" type="xs:string" minOccurs="0"/>
+                        <xs:element name="COMMERCIAL_SUB_TYPE" type="xs:string" minOccurs="0"/>
+                        <xs:element ref="ns10:PLAN_PERIODS" minOccurs="0"/>
+                        <xs:element ref="ns10:START_DATE"/>
+                        <xs:element ref="ns10:END_DATE"/>
+                        <xs:element ref="ns10:UNIT_DURATION" minOccurs="0"/>
+                        <xs:element ref="ns10:LINE_CLASS_CODE" minOccurs="0"/>
+                        <xs:element ref="ns10:PLAN_AUDIENCE" minOccurs="0"/>
+                        <xs:element ref="ns10:PLAN_RATE" minOccurs="0"/>
+                        <xs:element ref="ns10:COMM_T_CODE" minOccurs="0"/>
+                        <xs:element ref="ns10:COMM_ST_CODE" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="PLAN_LINES">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns10:PLAN_LINE" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="PLAN_PERIOD">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="PLAN_PERIOD_ID" type="xs:string" minOccurs="0"/>
+                        <xs:element ref="ns10:US_RATECARD_ID"/>
+                        <xs:element name="WEEK" type="xs:string" minOccurs="0"/>
+                        <xs:element name="MONTH" type="xs:string" minOccurs="0"/>
+                        <xs:element name="QUARTER" type="xs:string" minOccurs="0"/>
+                        <xs:element name="PERIOD_TYPE_CODE" type="xs:string" minOccurs="0"/>
+                        <xs:element name="BUILD_RATE" type="xs:string" minOccurs="0"/>
+                        <xs:element name="RC_RATE" type="xs:string" minOccurs="0"/>
+                        <xs:element name="pct_RC" type="xs:string" minOccurs="0"/>
+                        <xs:element name="START_DATE" type="xs:string" minOccurs="0"/>
+                        <xs:element name="IDENT" type="xs:string" minOccurs="0"/>
+                        <xs:element name="NO_UNITS" type="xs:string" minOccurs="0"/>
+                        <xs:element name="RC_IMPRESSION" type="xs:string" minOccurs="0"/>
+                        <xs:element name="BUILD_IMPRESSION" type="xs:string" minOccurs="0"/>
+                        <xs:element name="BUILD_NETWORK_RATING" type="xs:string" minOccurs="0"/>
+                        <xs:element name="RC_NETWORK_RATING" type="xs:string" minOccurs="0"/>
+                        <xs:element name="RC_NATIONAL_RATING" type="xs:string" minOccurs="0"/>
+                        <xs:element name="BUILD_NATIONAL_RATING" type="xs:string" minOccurs="0"/>
+                        <xs:element name="NATIONAL_CPP" type="xs:string" minOccurs="0"/>
+                        <xs:element name="NETWORK_CPP" type="xs:string" minOccurs="0"/>
+                        <xs:element name="BUILD_CPM" type="xs:string" minOccurs="0"/>
+                        <xs:element name="RC_CPM" type="xs:string" minOccurs="0"/>
+                        <xs:element name="VPVH" type="xs:string" minOccurs="0"/>
+                        <xs:element ref="ns10:SPOTS" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="PLAN_PERIODS">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns10:PLAN_PERIOD" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="PLAN_RATE" type="xs:string"/>
+            <xs:element name="PLINE_ID" type="xs:string"/>
+            <xs:element name="PRIMARY_CAT" type="xs:string"/>
+            <xs:element name="PRIMARY_CATEGORY" type="xs:string"/>
+            <xs:element name="PRODUCT_CATEGORY" type="xs:string"/>
+            <xs:element name="PROJECTION_BY_CODE" type="xs:string"/>
+            <xs:element name="Plan">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns10:PlanHeader"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="PlanHeader">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="PLAN_ID" type="xs:string" minOccurs="0"/>
+                        <xs:element name="PLAN_NAME" type="xs:string" minOccurs="0"/>
+                        <xs:element name="CHANNEL" type="xs:string" minOccurs="0"/>
+                        <xs:element ref="ns10:REVISION_NO"/>
+                        <xs:element ref="ns10:HOLD_ARCHIVED_REVISION_NO"/>
+                        <xs:element ref="ns10:ORDER_ARCHIVED_REV_NO"/>
+                        <xs:element ref="ns10:RATING_STREAM"/>
+                        <xs:element ref="ns10:GUARENTEED_CODE"/>
+                        <xs:element ref="ns10:COMPLIANT_CODE"/>
+                        <xs:element ref="ns10:HH_POST_BUY"/>
+                        <xs:element ref="ns10:DEMO_POST_BUY"/>
+                        <xs:element ref="ns10:SALES_TEAM_NAME"/>
+                        <xs:element ref="ns10:PROJECTION_BY_CODE"/>
+                        <xs:element name="PLAN_CLASS" type="xs:string" minOccurs="0"/>
+                        <xs:element name="MARKETPLACE" type="xs:string" minOccurs="0"/>
+                        <xs:element name="STATUS" type="xs:string" minOccurs="0"/>
+                        <xs:element ref="ns10:APPROVAL_STATUS" minOccurs="0"/>
+                        <xs:element name="START_DATE" type="xs:string" minOccurs="0"/>
+                        <xs:element name="END_DATE" type="xs:string" minOccurs="0"/>
+                        <xs:element name="START_QTR" type="xs:string" minOccurs="0"/>
+                        <xs:element name="END_QTR" type="xs:string" minOccurs="0"/>
+                        <xs:element name="PRIMARY_DEMO" type="xs:string" minOccurs="0"/>
+                        <xs:element name="ADVERTISER" type="xs:string" minOccurs="0"/>
+                        <xs:element name="BUYING_AGENCY" type="xs:string" minOccurs="0"/>
+                        <xs:element name="ACCOUNT_EXEC" type="xs:string" minOccurs="0"/>
+                        <xs:element name="EQUALIZED" type="xs:string" minOccurs="0"/>
+                        <xs:element ref="ns10:HIATUS_INFO" minOccurs="0"/>
+                        <xs:element ref="ns10:PLAN_BRAND" minOccurs="0"/>
+                        <xs:element ref="ns10:PLAN_CATEGORY" minOccurs="0"/>
+                        <xs:element ref="ns10:PLAN_LINES" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RATING_STREAM" type="xs:string"/>
+            <xs:element name="REVISION_NO" type="xs:string"/>
+            <xs:element name="SALES_TEAM_NAME" type="xs:string"/>
+            <xs:element name="SALES_UNIT">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns10:SALES_UNIT_ID"/>
+                        <xs:element ref="ns10:SALES_UNIT_NAME"/>
+                        <xs:element ref="ns10:DAYPART"/>
+                        <xs:element ref="ns10:CUSTOM_DAYPART"/>
+                        <xs:element ref="ns10:AIRING_TYPE"/>
+                        <xs:element ref="ns10:GROUP"/>
+                        <xs:element ref="ns10:GENRE"/>
+                        <xs:element ref="ns10:SCOPE"/>
+                        <xs:element ref="ns10:S_CATEGORY"/>
+                        <xs:element ref="ns10:START_TIME"/>
+                        <xs:element ref="ns10:END_TIME"/>
+                        <xs:element ref="ns10:SN_HIATUS" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="SALES_UNIT_ID" type="xs:string"/>
+            <xs:element name="SALES_UNIT_NAME" type="xs:string"/>
+            <xs:element name="SCOPE" type="xs:string"/>
+            <xs:element name="SECONDARY_CAT" type="xs:string"/>
+            <xs:element name="SN_HIATUS">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns10:HIATUS_DATES" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="SPOTS">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns10:SPOT_INFO" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="SPOT_INFO">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="PLAN_PERIOD_ID" type="xs:string" minOccurs="0"/>
+                        <xs:element name="BUILD_PRICE" type="xs:string" minOccurs="0"/>
+                        <xs:element name="UNIT_DURATION" type="xs:string" minOccurs="0"/>
+                        <xs:element name="SPOT_PLAN_STATUS" type="xs:string" minOccurs="0"/>
+                        <xs:element name="USN" type="xs:string" minOccurs="0"/>
+                        <xs:element name="START_DATE" type="xs:string" minOccurs="0"/>
+                        <xs:element name="PLAN_LINE_ID" type="xs:string" minOccurs="0"/>
+                        <xs:element name="ON_DATE" type="xs:string" minOccurs="0"/>
+                        <xs:element name="QUARTER" type="xs:string" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="START_DATE" type="xs:string"/>
+            <xs:element name="START_TIME" type="xs:string"/>
+            <xs:element name="S_CATEGORY" type="xs:string"/>
+            <xs:element name="TERTIARY_CAT" type="xs:string"/>
+            <xs:element name="TO_DATE" type="xs:string"/>
+            <xs:element name="UNIT_DURATION" type="xs:string"/>
+            <xs:element name="US_RATECARD_ID" type="xs:string"/>
+        </xs:schema>
+        <xs:schema xmlns="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema1.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="Error_Code" type="xs:string"/>
+            <xs:element name="Error_Desc" type="xs:string"/>
+            <xs:element name="Fault">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns11:Status"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Status">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns11:Error_Code" minOccurs="0"/>
+                        <xs:element ref="ns11:Error_Desc" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="Affiliate_Status_Code">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="1853000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Channel_Name" type="xs:string"/>
+            <xs:element name="Comm_Type_Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="National"/>
+                        <xs:enumeration value="Billboard"/>
+                        <xs:enumeration value="Local"/>
+                        <xs:enumeration value="Paid Programming"/>
+                        <xs:enumeration value="Barter"/>
+                        <xs:enumeration value="Promo National"/>
+                        <xs:enumeration value="Secondary Event"/>
+                        <xs:enumeration value="Snipe"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Day_Type_Id">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="1307001"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Inventory_Type_Code">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="3114000(Pri)"/>
+                        <xs:enumeration value="3114003(SecT)"/>
+                        <xs:enumeration value="3114004(SecQ)"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="NoOfWeeks" type="xs:int"/>
+            <xs:element name="OverlapSU_Input">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns3:Sales_Unit_Id"/>
+                        <xs:element ref="ns3:Start_Date"/>
+                        <xs:element ref="ns3:NoOfWeeks"/>
+                        <xs:element ref="ns3:Channel_Name"/>
+                        <xs:element ref="ns3:Comm_Type_Name"/>
+                        <xs:element ref="ns3:Day_Type_Id"/>
+                        <xs:element ref="ns3:Inventory_Type_Code"/>
+                        <xs:element ref="ns3:Affiliate_Status_Code"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Sales_Unit_Id" type="xs:string"/>
+            <xs:element name="Start_Date" type="xs:string"/>
+        </xs:schema>
+        <xs:schema xmlns="http://www.tibco.com/schemas/dev_I-2XXX_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/dev_I-2XXX_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="Booking_Mthd_Code">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="1542001(Week)"/>
+                        <xs:enumeration value="1542000(Day)"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Cat_Code" type="xs:string"/>
+            <xs:element name="Category_Name" type="xs:string"/>
+            <xs:element name="Channel_Id" type="xs:string"/>
+            <xs:element name="Channel_Name" type="xs:string"/>
+            <xs:element name="Comm_SType_Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="NATL"/>
+                        <xs:enumeration value="BB O"/>
+                        <xs:enumeration value="BB M"/>
+                        <xs:enumeration value="BB C"/>
+                        <xs:enumeration value="TAP-PRM"/>
+                        <xs:enumeration value="BB"/>
+                        <xs:enumeration value="DRLO"/>
+                        <xs:enumeration value="PP"/>
+                        <xs:enumeration value="BART"/>
+                        <xs:enumeration value="TAGGED-P"/>
+                        <xs:enumeration value="BANN"/>
+                        <xs:enumeration value="DRNA"/>
+                        <xs:enumeration value="DRFI"/>
+                        <xs:enumeration value="SPON"/>
+                        <xs:enumeration value="TP-NAT"/>
+                        <xs:enumeration value="TAP-NAT"/>
+                        <xs:enumeration value="SNP"/>
+                        <xs:enumeration value="LBAR"/>
+                        <xs:enumeration value="BUG"/>
+                        <xs:enumeration value="LOGO"/>
+                        <xs:enumeration value="INSH"/>
+                        <xs:enumeration value="PROD"/>
+                        <xs:enumeration value="VO"/>
+                        <xs:enumeration value="UPDA"/>
+                        <xs:enumeration value="ANIM"/>
+                        <xs:enumeration value="STILL"/>
+                        <xs:enumeration value="TSTIL"/>
+                        <xs:enumeration value="RCEE"/>
+                        <xs:enumeration value="RCTG"/>
+                        <xs:enumeration value="EIGE"/>
+                        <xs:enumeration value="VIG-P"/>
+                        <xs:enumeration value="PINA"/>
+                        <xs:enumeration value="TAGGED-N"/>
+                        <xs:enumeration value="DRPR"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Comm_Type_Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="National"/>
+                        <xs:enumeration value="Billboard"/>
+                        <xs:enumeration value="Local"/>
+                        <xs:enumeration value="Paid Programming"/>
+                        <xs:enumeration value="Barter"/>
+                        <xs:enumeration value="Promo National"/>
+                        <xs:enumeration value="Secondary Event"/>
+                        <xs:enumeration value="Snipe"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="End_Date" type="xs:string"/>
+            <xs:element name="Inventory_Input">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns6:Sales_Unit_Id"/>
+                        <xs:element ref="ns6:Start_Date"/>
+                        <xs:element ref="ns6:End_Date"/>
+                        <xs:element ref="ns6:Unit_Duration"/>
+                        <xs:element ref="ns6:Channel_Name"/>
+                        <xs:element ref="ns6:Comm_Type_Name"/>
+                        <xs:element ref="ns6:Inventory_Type_Code"/>
+                        <xs:element ref="ns6:Booking_Mthd_Code"/>
+                        <xs:element ref="ns6:Category_Name" minOccurs="0"/>
+                        <xs:element ref="ns6:Sub_Cat_Name" minOccurs="0"/>
+                        <xs:element ref="ns6:Sub_Sub_Cat_Name" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Inventory_Type_Code">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="3114000(Pri)"/>
+                        <xs:enumeration value="3114003(SecT)"/>
+                        <xs:enumeration value="3114004(SecQ)"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Sales_Unit_Id" type="xs:string"/>
+            <xs:element name="Sales_Unit_Name" type="xs:string"/>
+            <xs:element name="Start_Date" type="xs:string"/>
+            <xs:element name="Sub_Cat_Code" type="xs:string"/>
+            <xs:element name="Sub_Cat_Name" type="xs:string"/>
+            <xs:element name="Sub_Sub_Cat_Code" type="xs:string"/>
+            <xs:element name="Sub_Sub_Cat_Name" type="xs:string"/>
+            <xs:element name="Unit_Duration" type="xs:string"/>
+        </xs:schema>
+        <xs:schema xmlns="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd5" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd5" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="Error_Code" type="xs:string"/>
+            <xs:element name="Error_Desc" type="xs:string"/>
+            <xs:element name="Fault">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns8:Status"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Status">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns8:Error_Code" minOccurs="0"/>
+                        <xs:element ref="ns8:Error_Desc" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.tibco.com/schemas/SecureSellingTitle/SchemaUSGDefinitions/ArchitecturalSchema/SchemaR.xsd2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/SecureSellingTitle/SchemaUSGDefinitions/ArchitecturalSchema/SchemaR.xsd2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="RC_Channel" type="xs:string"/>
+            <xs:element name="RC_CommSType" type="xs:string"/>
+            <xs:element name="RC_Demo" type="xs:string"/>
+            <xs:element name="RC_EndQtr" type="xs:string"/>
+            <xs:element name="RC_Id" type="xs:string"/>
+            <xs:element name="RC_Req">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns0:RC_Id"/>
+                        <xs:element ref="ns0:RC_Channel"/>
+                        <xs:element ref="ns0:RC_StartQtr"/>
+                        <xs:element ref="ns0:RC_EndQtr"/>
+                        <xs:element ref="ns0:RC_CommSType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="ns0:RC_SellingName" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="ns0:RC_Demo" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RC_SellingName" type="xs:string"/>
+            <xs:element name="RC_StartQtr" type="xs:string"/>
+        </xs:schema>
+        <xs:schema xmlns="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd4" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd4" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="Error_Code" type="xs:string"/>
+            <xs:element name="Error_Desc" type="xs:string"/>
+            <xs:element name="Fault">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns5:Status"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Status">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns5:Error_Code" minOccurs="0"/>
+                        <xs:element ref="ns5:Error_Desc" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.tibco.com/schemas/dev_I-2XXX_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/dev_I-2XXX_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema.xsd2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="Avails" type="xs:string"/>
+            <xs:element name="Capacity" type="xs:string"/>
+            <xs:element name="Cat_Avails" type="xs:string"/>
+            <xs:element name="Cat_Capacity" type="xs:string"/>
+            <xs:element name="Cat_Real_Sold" type="xs:string"/>
+            <xs:element name="Cat_SN_Pressure" type="xs:string"/>
+            <xs:element name="Cat_SN_Sold" type="xs:string"/>
+            <xs:element name="Cat_SN_Sold_PCT" type="xs:string"/>
+            <xs:element name="Cat_Total_Pressure" type="xs:string"/>
+            <xs:element name="Cat_over_Sold" type="xs:string"/>
+            <xs:element name="Inventory_Output">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns7:Selling_Name" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Overlap_Sold" type="xs:string"/>
+            <xs:element name="Realistic_Sold" type="xs:string"/>
+            <xs:element name="SN_Pressure" type="xs:string"/>
+            <xs:element name="SN_Sold" type="xs:string"/>
+            <xs:element name="SN_Sold_PCT" type="xs:string"/>
+            <xs:element name="Sales_Unit_Id" type="xs:string"/>
+            <xs:element name="Selling_Name">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns7:Sales_Unit_Id"/>
+                        <xs:element ref="ns7:Week" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Total_Pressure" type="xs:string"/>
+            <xs:element name="Week">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns7:Week_Date"/>
+                        <xs:element ref="ns7:Capacity"/>
+                        <xs:element ref="ns7:Avails"/>
+                        <xs:element ref="ns7:SN_Sold"/>
+                        <xs:element ref="ns7:SN_Sold_PCT"/>
+                        <xs:element ref="ns7:Realistic_Sold"/>
+                        <xs:element ref="ns7:Overlap_Sold"/>
+                        <xs:element ref="ns7:SN_Pressure" minOccurs="0"/>
+                        <xs:element ref="ns7:Total_Pressure" minOccurs="0"/>
+                        <xs:element ref="ns7:Cat_Avails" minOccurs="0"/>
+                        <xs:element ref="ns7:Cat_Capacity" minOccurs="0"/>
+                        <xs:element ref="ns7:Cat_SN_Sold" minOccurs="0"/>
+                        <xs:element ref="ns7:Cat_SN_Sold_PCT" minOccurs="0"/>
+                        <xs:element ref="ns7:Cat_Real_Sold" minOccurs="0"/>
+                        <xs:element ref="ns7:Cat_over_Sold" minOccurs="0"/>
+                        <xs:element ref="ns7:Cat_SN_Pressure" minOccurs="0"/>
+                        <xs:element ref="ns7:Cat_Total_Pressure" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Week_Date" type="xs:string"/>
+        </xs:schema>
+        <xs:schema xmlns="http://www.tibco.com/schemas/SellingTitle/SchemaUSGDefinitions/ArchitecturalSchema/SchemaP.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/SellingTitle/SchemaUSGDefinitions/ArchitecturalSchema/SchemaP.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="Demo" type="xs:string"/>
+            <xs:element name="End_Quarter" type="xs:string"/>
+            <xs:element name="Input">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns9:PlanId"/>
+                        <xs:element ref="ns9:Period" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="ns9:SpotInfo" minOccurs="0"/>
+                        <xs:element ref="ns9:Demo" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Period">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="WEEK"/>
+                        <xs:enumeration value="MONTH"/>
+                        <xs:enumeration value="QUARTER"/>
+                        <xs:enumeration value="ALL"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="PlanId" type="xs:int"/>
+            <xs:element name="SpotInfo">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="YES"/>
+                        <xs:enumeration value="NO"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Start_Quarter" type="xs:string"/>
+        </xs:schema>
+        <xs:schema xmlns="http://www.tibco.com/schemas/SecureSellingTitle/SchemaUSGDefinitions/ArchitecturalSchema/SchemaRR.xsd3" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/SecureSellingTitle/SchemaUSGDefinitions/ArchitecturalSchema/SchemaRR.xsd3" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="CPM" type="xs:string"/>
+            <xs:element name="Channel_Name" type="xs:string"/>
+            <xs:element name="Commercial_Sub_Type_name" type="xs:string"/>
+            <xs:element name="Commercial_Type_Name" type="xs:string"/>
+            <xs:element name="Deal_Class_Name" type="xs:string"/>
+            <xs:element name="Demo" type="xs:string"/>
+            <xs:element name="Details">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns1:Demo"/>
+                        <xs:element ref="ns1:UnitPrice"/>
+                        <xs:element ref="ns1:CPM"/>
+                        <xs:element ref="ns1:National_CPP"/>
+                        <xs:element ref="ns1:Network_CPP"/>
+                        <xs:element ref="ns1:VPVH"/>
+                        <xs:element ref="ns1:National_Rating"/>
+                        <xs:element ref="ns1:Network_Rating"/>
+                        <xs:element ref="ns1:Impressions"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="EndDate" type="xs:string"/>
+            <xs:element name="Header_Info">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns1:US_Ratecard_ID"/>
+                        <xs:element ref="ns1:US_Ratecard_Name"/>
+                        <xs:element ref="ns1:Channel_Name"/>
+                        <xs:element ref="ns1:StartDate"/>
+                        <xs:element ref="ns1:EndDate"/>
+                        <xs:element ref="ns1:Commercial_Type_Name"/>
+                        <xs:element ref="ns1:Commercial_Sub_Type_name"/>
+                        <xs:element ref="ns1:Deal_Class_Name"/>
+                        <xs:element ref="ns1:Marketplace_Name"/>
+                        <xs:element ref="ns1:Ratingstream_Name"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Impressions" type="xs:string"/>
+            <xs:element name="Marketplace_Name" type="xs:string"/>
+            <xs:element name="National_CPP" type="xs:string"/>
+            <xs:element name="National_Rating" type="xs:string"/>
+            <xs:element name="Network_CPP" type="xs:string"/>
+            <xs:element name="Network_Rating" type="xs:string"/>
+            <xs:element name="QtrName" type="xs:string"/>
+            <xs:element name="Quarter">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns1:QtrName"/>
+                        <xs:element ref="ns1:S_Name" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Quarters">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns1:Quarter" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Ratingstream_Name" type="xs:string"/>
+            <xs:element name="S_Name">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns1:Details" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                    <xs:attribute name="Sales_Id" type="xs:string"/>
+                    <xs:attribute name="Selling_Name" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Sales_Id" type="xs:string"/>
+            <xs:element name="Selling_Name" type="xs:string"/>
+            <xs:element name="StartDate" type="xs:string"/>
+            <xs:element name="US_Ratecard_ID" type="xs:string"/>
+            <xs:element name="US_Ratecard_Name" type="xs:string"/>
+            <xs:element name="UnitPrice" type="xs:string"/>
+            <xs:element name="VPVH" type="xs:string"/>
+            <xs:element name="ratecard">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns1:Header_Info"/>
+                        <xs:element ref="ns1:Quarters"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/dev_I-2074_CI_AdSalesAPI/SchemaUSGDefinitions/ArchitecturalSchema/Schema2.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="Error_Code" type="xs:string"/>
+            <xs:element name="Error_Desc" type="xs:string"/>
+            <xs:element name="Fault">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns2:Status"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Status">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns2:Error_Code" minOccurs="0"/>
+                        <xs:element ref="ns2:Error_Desc" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:service name="ADSales">
+        <wsdl:port name="PortTypeEndpoint1" binding="tns:PortTypeEndpoint1Binding">
+            <soap:address location="http://usalpapld252.nbcuni.ge.com:9094/SharedResources/Service/ADSales.serviceagent/PortTypeEndpoint1"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:portType name="PortType">
+        <wsdl:operation name="Ratecard">
+            <wsdl:input message="tns:Ratecard_Input"/>
+            <wsdl:output message="tns:Ratecard_Output"/>
+            <wsdl:fault name="fault1" message="tns:Ratecard_Fault"/>
+        </wsdl:operation>
+        <wsdl:operation name="OverlapSU">
+            <wsdl:input message="tns:IM_OverlapSu_Input"/>
+            <wsdl:output message="tns:IM_OverlapSU_Output"/>
+            <wsdl:fault name="fault1" message="tns:IM_OverlapSu_Fault"/>
+        </wsdl:operation>
+        <wsdl:operation name="Inventory">
+            <wsdl:input message="tns:Inventory_Input"/>
+            <wsdl:output message="tns:Inventory_Output"/>
+            <wsdl:fault name="fault1" message="tns:Inventory_Fault"/>
+        </wsdl:operation>
+        <wsdl:operation name="Plan">
+            <wsdl:input message="tns:Plan_Input"/>
+            <wsdl:output message="tns:Plan_Output"/>
+            <wsdl:fault name="fault1" message="tns:Plan_Fault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PortTypeEndpoint1Binding" type="tns:PortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Ratecard">
+            <soap:operation style="document" soapAction="/SharedResources/Service/ADSales.serviceagent/PortTypeEndpoint1/Ratecard"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="RC_Request"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="Rc_Response"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="OverlapSU">
+            <soap:operation style="document" soapAction="/SharedResources/Service/ADSales.serviceagent/PortTypeEndpoint1/OverlapSU"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="Request"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="Response"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="Inventory">
+            <soap:operation style="document" soapAction="/SharedResources/Service/ADSales.serviceagent/PortTypeEndpoint1/Inventory"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="Request"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="Response"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="Plan">
+            <soap:operation style="document" soapAction="/SharedResources/Service/ADSales.serviceagent/PortTypeEndpoint1/Plan"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="Request"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="Response"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:message name="Ratecard_Input">
+        <wsdl:part name="RC_Request" element="ns0:RC_Req"/>
+    </wsdl:message>
+    <wsdl:message name="Ratecard_Output">
+        <wsdl:part name="Rc_Response" element="ns1:ratecard"/>
+    </wsdl:message>
+    <wsdl:message name="Ratecard_Fault">
+        <wsdl:part name="Fault" element="ns2:Fault"/>
+    </wsdl:message>
+    <wsdl:message name="IM_OverlapSu_Input">
+        <wsdl:part name="Request" element="ns3:OverlapSU_Input"/>
+    </wsdl:message>
+    <wsdl:message name="IM_OverlapSU_Output">
+        <wsdl:part name="Response" element="ns4:OverlapSU_Response"/>
+    </wsdl:message>
+    <wsdl:message name="IM_OverlapSu_Fault">
+        <wsdl:part name="Fault" element="ns5:Fault"/>
+    </wsdl:message>
+    <wsdl:message name="Inventory_Input">
+        <wsdl:part name="Request" element="ns6:Inventory_Input"/>
+    </wsdl:message>
+    <wsdl:message name="Inventory_Output">
+        <wsdl:part name="Response" element="ns7:Inventory_Output"/>
+    </wsdl:message>
+    <wsdl:message name="Inventory_Fault">
+        <wsdl:part name="Fault" element="ns8:Fault"/>
+    </wsdl:message>
+    <wsdl:message name="Plan_Input">
+        <wsdl:part name="Request" element="ns9:Input"/>
+    </wsdl:message>
+    <wsdl:message name="Plan_Output">
+        <wsdl:part name="Response" element="ns10:Plan"/>
+    </wsdl:message>
+    <wsdl:message name="Plan_Fault">
+        <wsdl:part name="Fault" element="ns11:Fault"/>
+    </wsdl:message>
+</wsdl:definitions>
