@@ -5,9 +5,12 @@ module DataMapper
     module Soap
       
       class Connection
-
+        
+        WSDL_FILE_NAME = 'wsdl.xml'
+        DEFAULT_WSDL_PATH = File.join('lib','dm-soap-adapter',WSDL_FILE_NAME)
+        
         def initialize(options)
-          @wsdl_path = options.fetch(:path)
+          @wsdl_path = options.fetch(:path, DEFAULT_WSDL_PATH)
           @savon_options = {wsdl: @wsdl_path}
           if options[:logging_level] && options[:logging_level].downcase == 'debug'
             @savon_options[:log_level] = :debug
@@ -15,15 +18,10 @@ module DataMapper
           end
           @client = Savon::Client.new(@savon_options)
           @options = options
-          @expose_client = @options.fetch(:enable_mock_setters, false)
-        end
-        
-        def client=(client)
-          @client = client if @expose_client
         end
         
         def client
-          @client = Savon::Client.new(@savon_options)
+          @client
         end
         
         def call_create(create_method, objects)
@@ -50,7 +48,7 @@ module DataMapper
         
         def call_service(operation, objects)
           DataMapper.logger.debug( "Calling #{operation.to_sym} with #{objects.inspect}")
-          response = @client.call(operation.to_sym, objects)
+          response = client.call(operation.to_sym, objects)
         end
         
       end 

@@ -6,7 +6,6 @@ describe DataMapper::Adapters::Soap::Adapter do
   before(:all) do
     @adapter = DataMapper.setup(:default, 
       { adapter: :soap,
-        path: "spec/fixtures/wsdl.xml",
         mappings: {
           plan: {
             read_xml_ns: 'ins7',
@@ -36,13 +35,7 @@ describe DataMapper::Adapters::Soap::Adapter do
     
   end
   
-  after(:all) do
-  end
-  
   describe '#read' do
-    before(:all) do
-
-    end
            
       it 'should query Ratecard by ID and other required parameters' do
         ratecards = V1::Ratecard.all(id: 14855, extra_parameters: {'RC_Channel' => 'Oxygen', 'RC_StartQtr' => '3Q13',  'RC_EndQtr' => '3Q14', 'RC_Demo' => 'F18-49'})
