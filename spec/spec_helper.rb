@@ -8,8 +8,6 @@ require 'dm-soap-adapter'
 require "savon/mock/spec_helper"
 require 'dm-core/spec/shared/adapter_spec'
 
-require 'mocha/api'
-
 #DataMapper::Logger.new(STDOUT, :debug)
 
 ROOT = Pathname(__FILE__).dirname.parent
@@ -25,7 +23,3 @@ TEST_USERNAME = 'humpty'
 TEST_PASSWORD = 'dumpty'
 
 DataMapper.finalize
-
-RSpec.configure do |config|
-  config.mock_framework = :mocha
-end

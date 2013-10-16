@@ -18,6 +18,4 @@ group :test do
   gem "dm-core",  DM_VERSION
 
   gem 'savon', '~> 2.3.0'
-  gem "mocha", '~> 0.13', :require => false
-  gem 'soap4r', :git => 'git://github.com/felipec/soap4r.git'
 end

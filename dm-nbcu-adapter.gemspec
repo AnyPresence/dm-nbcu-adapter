@@ -18,7 +18,8 @@ Gem::Specification.new do |spec|
   
   spec.add_dependency "httpclient",     "~> 2.1.5.2"
   spec.add_dependency "data_objects",   "~> 0.10.13"
-      
+  spec.add_dependency "savon",          "~> 2.3.0"
+  
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
 end
