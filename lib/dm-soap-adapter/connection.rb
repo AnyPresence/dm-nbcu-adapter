@@ -7,7 +7,7 @@ module DataMapper
       class Connection
         
         WSDL_FILE_NAME = 'wsdl.xml'
-        DEFAULT_WSDL_PATH = File.join('lib','dm-soap-adapter',WSDL_FILE_NAME)
+        DEFAULT_WSDL_PATH = File.join(File.expand_path(File.dirname(__FILE__)),WSDL_FILE_NAME)
         
         def initialize(options)
           @wsdl_path = options.fetch(:path, DEFAULT_WSDL_PATH)
