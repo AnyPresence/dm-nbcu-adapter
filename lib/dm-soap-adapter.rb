@@ -11,3 +11,5 @@ require 'dm-soap-adapter/adapter'
 
 require 'savon'
 
+require 'rubygems'
+require 'json'

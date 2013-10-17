@@ -11,6 +11,11 @@ module DataMapper
           @expose_connection = @options.fetch(:enable_mock_setters, false)
           initialize_logger
           @mappings = options.fetch(:mappings)
+          
+          if @mappings.instance_of? String
+            DataMapper.logger.debug("Attempting to convert string mappings")
+            @mappings = JSON.parse(@mappings)
+          end
         end
 
         def connection=(connection)
