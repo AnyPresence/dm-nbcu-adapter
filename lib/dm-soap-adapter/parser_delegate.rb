@@ -10,7 +10,7 @@ module DataMapper
           return elements unless body
           entity = entity_name(model)
           options = @mappings.fetch(entity)
-          selector = options[:read_response_selector]
+          selector = options['read_response_selector']
           @log.debug("Selector is #{selector}")
           if selector.nil?
             @log.debug("parsing body #{body.inspect}")

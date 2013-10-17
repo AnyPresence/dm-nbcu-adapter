@@ -8,9 +8,9 @@ module DataMapper
           entity = entity_name(query.model)
           DataMapper.logger.debug("Looking up #{entity} in mappings.")
           options = @mappings.fetch(entity)
-          xml_ns = options.fetch(:read_xml_ns,nil)
+          xml_ns = options.fetch('read_xml_ns',nil)
           if query.conditions
-            options.fetch(:read_params).each do |dm_property_name, wsdl_remote_name|
+            options.fetch('read_params').each do |dm_property_name, wsdl_remote_name|
               if (value = find_condition_value_for_property_name(query.conditions, dm_property_name))
                 if xml_ns.nil?
                   query_hash[wsdl_remote_name] = value
@@ -38,11 +38,7 @@ module DataMapper
         def mapped_operation(model)
           entity = entity_name(model)
           options = @mappings.fetch(entity)
-          if options.has_key?(:operation)
-            return options.fetch(:operation)
-          else
-            return entity
-          end
+          options.fetch('operation', entity)
         end
         
         private
