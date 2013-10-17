@@ -13,3 +13,4 @@ require 'savon'
 
 require 'rubygems'
 require 'json'
+require 'yaml'

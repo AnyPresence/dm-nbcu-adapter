@@ -13,8 +13,9 @@ module DataMapper
           @mappings = options.fetch(:mappings)
           
           if @mappings.instance_of? String
-            DataMapper.logger.debug("Attempting to convert string mappings")
-            @mappings = JSON.parse(@mappings)
+            DataMapper.logger.debug("Attempting to load string mappings")
+            @mappings = YAML.load(@mappings)
+            DataMapper.logger.debug("Loaded #{@mappings.inspect}")
           end
         end
 
