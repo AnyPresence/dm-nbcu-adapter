@@ -6,29 +6,7 @@ describe DataMapper::Adapters::Soap::Adapter do
   before(:all) do
     @adapter = DataMapper.setup(:default, 
       { adapter: :soap,
-        mappings: {
-          plan: {
-            read_xml_ns: 'ins7',
-            read_params: {id: 'PlanId'},
-            read_response_selector: 'plan.plan_header'
-          },
-          inventory: {
-            read_xml_ns: 'ins4',
-            read_params: {id: 'Sales_Unit_Id'},
-            read_response_selector: 'inventory_output.selling_name'
-          },
-          ratecard: {
-            read_xml_ns: 'ins5',
-            read_params: {id: 'RC_Id', channel: 'RC_Channel'},
-            read_response_selector: 'ratecard.header_info'
-          },
-          overlap: {
-            operation: 'overlap_su',
-            read_xml_ns: 'ins3',
-            read_params: {id: 'Sales_Unit_Id'},
-            read_response_selector: 'overlap_su_response'
-          }
-        }        
+        mappings: "{\"plan\":{\"read_xml_ns\":\"ins7\",\"read_params\":{\"id\":\"PlanId\"},\"read_response_selector\":\"plan.plan_header\"},\"inventory\":{\"read_xml_ns\":\"ins4\",\"read_params\":{\"id\":\"Sales_Unit_Id\"},\"read_response_selector\":\"inventory_output.selling_name\"},\"ratecard\":{\"read_xml_ns\":\"ins5\",\"read_params\":{\"id\":\"RC_Id\",\"channel\":\"RC_Channel\"},\"read_response_selector\":\"ratecard.header_info\"},\"overlap\":{\"operation\":\"overlap_su\",\"read_xml_ns\":\"ins3\",\"read_params\":{\"id\":\"Sales_Unit_Id\"},\"read_response_selector\":\"overlap_su_response\"}}"
         #logging_level: 'debug'
       }
     )

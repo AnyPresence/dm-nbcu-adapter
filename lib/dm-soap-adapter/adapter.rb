@@ -14,7 +14,7 @@ module DataMapper
           
           if @mappings.instance_of? String
             DataMapper.logger.debug("Attempting to load string mappings")
-            @mappings = YAML.load(@mappings)
+            @mappings = JSON.parse(@mappings)
             DataMapper.logger.debug("Loaded #{@mappings.inspect}")
           end
         end
