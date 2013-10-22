@@ -36,7 +36,7 @@ module DataMapper
                 extra_selector.split('.').each do |exp|
                   extra_property = extra_property.fetch(exp.to_sym)
                 end
-                @log.debug("Setting #{mapped_field.to_sym} to #{extra_property.inspect}")
+                @log.debug("---Setting #{mapped_field.to_sym} to size of #{extra_property.size} #{extra_property.inspect}")
                 collection[mapped_field.to_sym] = extra_property
               end
               

@@ -21,6 +21,8 @@ describe DataMapper::Adapters::Soap::Adapter do
         ratecard = ratecards.first
         ratecard.id.should == 14855
         ratecard.name.should == '13/14 Broadcast Upfront RC as of 2/4/13'
+        ratecard.start_date.to_s.should == '2013-04-01'
+        ratecard.end_date.to_s.should == '2014-12-28'
         ratecard.channel.should == 'Oxygen'
         ratecard.quarters.should_not be_nil
       end
