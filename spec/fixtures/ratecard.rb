@@ -13,6 +13,6 @@ module V1
     property :deal_class_name, String, field: 'Deal_Class_Name'
     property :marketplace, String, field: 'Marketplace_Name'
     property :ratingstream, String, field: 'Ratingstream_Name'
-  
+    property :quarters, Object, field: 'Quarters'
   end
 end

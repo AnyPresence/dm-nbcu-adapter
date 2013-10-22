@@ -12,6 +12,8 @@ module DataMapper
           options = @mappings.fetch(entity)
           selector = options['read_response_selector']
           @log.debug("Selector is #{selector}")
+          extra_selector_hash = options['extra_selector_hash']
+          @log.debug("Extra property selector hash is #{extra_selector_hash}")
           if selector.nil?
             @log.debug("parsing body #{body.inspect}")
             return parse_collection(body, model)
@@ -25,6 +27,19 @@ module DataMapper
               @log.debug("collection using selector is #{collection.inspect}")
               elements = parse_collection(collection, model)
             else
+              
+              unless extra_selector_hash.nil? # FTW! Allow the mapping of a property to a value outside the original selector in response
+                extra_property = body
+                extra_selector = extra_selector_hash.fetch('expression')
+                mapped_field = extra_selector_hash.fetch('field').snakecase
+                @log.debug("Will use extra selector of #{extra_selector}")
+                extra_selector.split('.').each do |exp|
+                  extra_property = extra_property.fetch(exp.to_sym)
+                end
+                @log.debug("Setting #{mapped_field.to_sym} to #{extra_property.inspect}")
+                collection[mapped_field.to_sym] = extra_property
+              end
+              
               elements = [parse_record(collection, model)]
             end
             @log.debug("about to return #{elements}")
